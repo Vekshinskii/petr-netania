@@ -11,14 +11,23 @@ const navLink = document.querySelector('.nav_link');
 const mobileForm = document.querySelector('.form_mobile');
 const aboutLink = document.getElementById('about_link');
 const contactLink = document.getElementById('contact_link');
+const navi_to = document.getElementsByClassName('navi_to');
 
 
 function showFormIn() {
     mobileForm.appendChild(form);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
 
+document.addEventListener('DOMContentLoaded', function () {
+    Array.from(navi_to).forEach(function(elem) {
+      elem.addEventListener('click', (e)=> {
+            e.preventDefault();
+            let path = e.currentTarget.dataset.path;
+            navigateTo(path);
+        });
+    });
+    
     window.addEventListener('scroll', function () {
         if (window.scrollY > scrollThreshold) {
             header.classList.add('scrolled');

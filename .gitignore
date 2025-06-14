@@ -2,6 +2,9 @@
 build/
 .firebaserc
 firebase.json
+.gitignore
+package.json
+package-lock.json
 
 # Logs
 logs
