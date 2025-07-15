@@ -1,11 +1,21 @@
 navigateTo('/');
+
 // Simple router implementation
 function navigateTo(path) {
     // Check if it's a service route
     const serviceRoute = services.find(s => path === s.route);
-    
+
     if (serviceRoute) {
         renderServicePage(serviceRoute.id);
+        return;
+    }
+
+    if (path === 'back') {
+        window.location.reload();
+        window.scrollTo({
+            top: 0, //behavior: "smooth" // Smooth scrolling animation
+        });
+
         return;
     }
 
@@ -20,19 +30,23 @@ function navigateTo(path) {
 }
 
 function renderHomePage() {
-    // Render your home page here
     document.getElementById('app').innerHTML = `
            <main class="home_wrapper">
-        <div class="main_page">
+           <div class="blur-overlay"></div>
+<img class="elem_light_mobile" alt="elem_light_mobile" src="./Utills/images/mobile_home.webp"/>
+<img class="elem_blue" alt="elem_blue" src="./Utills/images/elem_blue.webp"/> 
+<img class="elem_blue_mobile" alt="elem_blue_mobile" src="./Utills/images/mobile_blue_home.webp"/>
+        <div id="main_page" class="main_page">
             <div class="content">
                 <h1 class="title">ПЕРЕВОД ДОКУМЕНТОВ <br> УСЛУГИ В ИЗРАИЛЕ</h1>
                 <button class="order_consultation">Получить консультацию</button>
-                <div class=" whatsapp"></div>
+                <a href="https://wa.me/972547615507"><div class="whatsapp"></div></a>
             </div>
-            <img class="elem_light" alt="elem_light" src="./Utills/images/elem_light.jpg"/>
+              <a href="https://wa.me/972547615507"><div class="whatsapp_mobile"></div></a>
+            <img class="elem_light" alt="elem_light" src="./Utills/images/elem_light.webp"/>
             <div class="form_section">
                 <img class="man" alt="man" src="./Utills/images/man.webp"/>
-                <form id="shared-form" class="form">
+                <form class="form">
                 <span class="form_group">
                 <label for="name"></label>
                 <input name="name" id="name" type="text" placeholder="Имя">
@@ -52,35 +66,24 @@ function renderHomePage() {
                 </form>
             </div>
 
-            <span class="list_services">
-                <a class="navi_to" data-path="/marriage" href="">БРАКИ</a>
+            <div class="list_services">
+                <a class="navi_to" data-path="/marriage" href="" >БРАКИ</a>
                 <a class="navi_to" data-path="/apostille" href="">АПОСТИЛЬ</a>
                 <a class="navi_to" data-path="/translation" href="">ПЕРЕВОД ДОКУМЕНТОВ</a>
                 <a class="navi_to" data-path="/forms" href="">ЗАПОЛНЕНИЕ АНКЕТ</a>
-                <a class="navi_to" data-path="" href="">СОСТАВЛЕНИЕ ЗАВЕЩАНИЯ</a>
-                <a class="navi_to" data-path="" href="">ПОДТВЕРЖДЕНИЯ<br> ОТЦОВСТВА / МАТЕРИНСТВА</a>
-                <a class="navi_to" data-path="" href="">ПОМОЩЬ В ПОДГОТОВКЕ<br> ДОКУМЕНТОВ</a>
-                <a class="navi_to" data-path="" href="">ОФОРМЛЕНИЕ ГРАЖДАНСТВА<br> ДЛЯ “ПРЕСТАРЕЛОГО РОДИТЕЛЯ”</a>
-                <a class="navi_to" data-path="" href="">ЗАКАЗ И ПОЛУЧЕНИЕ ДОКУМЕНТОВ<br> ИЗ СТРАН БЫВШЕГО СНГ</a>
-            </span>
-
-            <!--        <img class="mobile_man" alt="mobile_man" src="./Utills/images/mobile_man.png"/>-->
-            <div class="whatsapp-float">
-                <div class="whatsapp-ring"></div>
-                <a href="#" target="_blank">
-                    <img src="./Utills/images/whatsapp.svg" alt="WhatsApp">
-                </a>
+                <a class="navi_to" data-path="/will" href="">СОСТАВЛЕНИЕ ЗАВЕЩАНИЯ</a>
+                <a class="navi_to" data-path="/parentage" href="">ПОДТВЕРЖДЕНИЯ<br> ОТЦОВСТВА / МАТЕРИНСТВА</a>
+                <a class="navi_to" data-path="/document-preparation" href="">ПОМОЩЬ В ПОДГОТОВКЕ<br> ДОКУМЕНТОВ</a>
+                <a class="navi_to" data-path="/parent-citizenship" href="">ОФОРМЛЕНИЕ ГРАЖДАНСТВА<br> ДЛЯ “ПРЕСТАРЕЛОГО РОДИТЕЛЯ”</a>
+                <a class="navi_to" data-path="/cis-documents" href="">ЗАКАЗ И ПОЛУЧЕНИЕ ДОКУМЕНТОВ<br> ИЗ СТРАН БЫВШЕГО СНГ</a>
             </div>
+       
         </div>
         <div id="about">
             <div class="contact_page">
                 <div class="contact_part">
                     <div id="contact" class="contact_section">
                         <h1>Контакты</h1>
-                        <div class="about_us_text_mobile">
-                            <p>Сегодня наша компания называется «Агентство НАТАНИЯ - ПЕТР»
-                                и по-прежнему находится по тому же адресу, что и 25 лет назад:</p>
-                        </div>
                         <div class="contact_group">
                             <div class="contact_text">
                                 <p>Нетания</p>
@@ -96,20 +99,20 @@ function renderHomePage() {
                             </div>
                             <img src="./Utills/images/icon_email.svg" alt="icon_email" class="icon_email"/>
                         </div>
-                        <div class="contact_group_blue">
+                        <div class="contact_group">
                             <div class="contact_text">
                                 <p>+(972)505-382121</p>
                                 <p>+(972)544-388831</p>
                                 <p>+(972)508-621927</p>
                             </div>
-                            <img src="./Utills/images/icon_phone.png" alt="icon_phone" class="icon_phone"/>
+                            <img src="./Utills/images/icon_phone.webp" alt="icon_phone" class="icon_phone"/>
                         </div>
                         <div class="about_us_text">
                             <p>Сегодня наша компания называется «Агентство НАТАНИЯ - ПЕТР»
                                 и по-прежнему находится по тому же адресу, что и 25 лет назад.</p>
                         </div>
                     </div>
-                    <div class="about_info">
+                    <div id="about_info" class="about_info">
                         <h1>О нас</h1>
                         <div class="about_text">
                             <p>Наше агентство было создано в 1990 году, когда в Израиль приехало много репатриантов.
@@ -120,7 +123,11 @@ function renderHomePage() {
                                 клиенту.</p>
                             <p>Именно поэтому те, кто хоть раз обратился в наше агентство, вновь и вновь возвращаются к нам
                                 для решения новых вопросов.</p>
-                            <div class="whatsapp contact"></div>
+                            <div class="about_us_text_mobile">
+                            <p>Сегодня наша компания называется «Агентство НАТАНИЯ - ПЕТР»
+                                и по-прежнему находится по тому же адресу, что и 25 лет назад.</p>
+                        </div>
+                            <a href="https://wa.me/972547615507"><div class="whatsapp contact"></div></a>
                         </div>
                     </div>
                 </div>
@@ -132,9 +139,22 @@ function renderHomePage() {
 
 function renderNotFound() {
     document.getElementById('app').innerHTML = `
-        <div class="not-found">
+    <div class="not-found">
+        <img class="elem_light_mobile" alt="elem_light_mobile" src="./Utills/images/mobile_home.webp"/>
+        <img class="elem_blue" alt="elem_blue" src="./Utills/images/elem_blue.webp"/> 
+        <img class="elem_blue_mobile" alt="elem_blue_mobile" src="./Utills/images/mobile_blue_home.webp"/>
+          <img class="elem_light" alt="elem_light" src="./Utills/images/elem_light.webp"/>
+        <div class="not-found_content">
             <h1>404 - Страница не найдена</h1>
-            <button onclick="navigateTo('/')">Вернуться на главную</button>
+            <h2>
+            Кажется, вы попали не туда.<br/> 
+            Возможно, страница удалилась, переехала... или просто решила взять выходной.
+            Извините за неудобство!
+            Вы можете вернуться на главную страницу и найти всё, что нужно — там всё на своих местах.
+            А если что-то пошло совсем не так — мы всегда на связи и готовы помочь.
+            </h2>
+            <button onclick="navigateTo('back')">Вернуться на главную</button>
         </div>
+    </div>
     `;
 }

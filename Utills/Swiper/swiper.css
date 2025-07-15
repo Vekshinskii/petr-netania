@@ -1,0 +1,57 @@
+/* Основные стили для контейнера слайдера */
+.swiper {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    min-height: 30vh;
+    max-width: 90vw; /* Ограничиваем максимальную ширину */
+    margin: 0 auto; /* Центрируем слайдер */
+}
+
+/* Стили для слайдов */
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    width: 90vw;
+    height: 50vh;
+    margin: 0 auto;
+    background-color: #B9F4D4;
+}
+.swiper-slide h3 {
+    margin: 2vh 4vh;
+}
+.step-content {
+    text-align: center;
+    margin: 3vh auto;
+}
+/* Стили для изображений внутри слайдов */
+.swiper-slide img {
+    width: 30%;
+    height: 40%;
+    margin: 2vh 0;
+}
+.swiper-pagination {
+    color: #33BEB3;
+    background-color: #33BEB3;
+}
+/* Кастомизация пагинации (точек) */
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background-color: #33BEB3;
+}
+
+/* Стили для кнопок навигации */
+.swiper-button-next,
+.swiper-button-prev {
+   color: #fcfdfb !important;
+    padding: 0 20px;
+}

@@ -79,7 +79,7 @@ button:focus-visible {
     min-width: 16vw;
 }
 
-.logo .second_part {
+.logo .second_part_logo {
     color: #33BEB3;
 }
 
@@ -272,19 +272,22 @@ button:focus-visible {
     margin-top: 6.8vh;
     width: 60px;
     height: 60px;
-    background-image: url("Utills/images/whatsapp.svg");
+    background-image: url("Utills/images/whatsapp.webp");
     fill: #125956;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
     transition: transform 0.3s ease;
+    z-index: 1000;
 }
 
 .whatsapp:hover {
     transform: scale(1.2);
 }
-
+.whatsapp_mobile {
+    display: none;
+}
 .list_services {
     position: absolute;
     z-index: 3;
@@ -562,7 +565,8 @@ a, button, [role="button"], [onclick] {
     margin-bottom: 1.5vw;
     padding: 20px;
     width: 23vw;
-    height: 13vh;
+    min-height: 15vh;
+    height: fit-content;
     background-color: #B9F4D4;
     text-wrap: nowrap;
     border-radius: 8px;
@@ -672,10 +676,6 @@ a, button, [role="button"], [onclick] {
     width: 100vw;
     min-height: 100vh;
     height: fit-content;
-    /*background-image: url("./Utills/images/elem_light_service.png");*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: right;*/
-    /*background-size: cover;*/
     padding: 5vh 10vw;
 }
 .text {
@@ -730,17 +730,17 @@ a, button, [role="button"], [onclick] {
 }
 .second_part img{
     position: absolute;
-    top: 15vh;
-    right: 10vw;
+    top: 17vh;
+    right: 12vw;
     width: 30vw;
 }
 #main_icon_service  {
-    top: 20vh;
-    right: 15vw;
-    width: 20vw;
-    height: 20vw;
+    top: 21vh;
+    right: 17vw;
+    width: 18vw;
+    height: 18vw;
 }
-.icon_apostile_order {
+.icon_steps {
     width: 7vw;
 }
 .steps_section {
@@ -782,7 +782,7 @@ a, button, [role="button"], [onclick] {
     width: 90vw;
 }
 .features_service,
-.resonse_section,
+.reasonse_section,
 .reasons {
    text-align: left;
     display: flex;
@@ -836,7 +836,7 @@ a, button, [role="button"], [onclick] {
     display: block;
     width: 4vw;
     height: 4vw;
-    background-image: url("Utills/images/whatsapp.svg");
+    background-image: url("Utills/images/whatsapp.webp");
     fill: #125956;
     background-size: cover;
     background-repeat: no-repeat;
@@ -864,7 +864,52 @@ a, button, [role="button"], [onclick] {
     flex-direction: column;
     align-items: center;
 }
+#shared-form {
+    display: none;
+}
+.not-found {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #125956;
 
+}
+.not-found  button {
+    margin-top: 3vh;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    width: fit-content;
+    background-color: #125956;
+    border: none;
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+    letter-spacing: 2px;
+    font-size: 2vh;
+    cursor: pointer;
+}
+
+.not-found h2 {
+    width: 80%;
+    padding: 20px;
+    font-family: "Roboto Condensed", sans-serif;
+
+}
+.not-found_content {
+    margin-top: 5vh;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: calc(var(--index) * 0.9);
+    font-weight: 300;
+}
 @media (max-width: 2500px) {
     .main_page {
         height: 80vh;
@@ -908,7 +953,16 @@ a, button, [role="button"], [onclick] {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1030px) {
+    body, html {
+        min-height: 100dvh; /* Динамическая высота */
+        margin: 0;
+        padding: 0;
+        overflow-y: visible;
+    }
+    #shared-form {
+        display: flex;
+    }
     html {
         scroll-padding-top: 160px; /* Высота вашего header */
     }
@@ -947,13 +1001,13 @@ a, button, [role="button"], [onclick] {
         top: -300%;
         right: 0;
         width: 100%;
-        min-height: 48vh;
+        min-height: 50dvh;
         display: flex;
         flex-direction: column;
         background-color: transparent;
         align-items: center;
         justify-content: center;
-        transition: top 0.3s ease-in-out;
+        transition: top 0.5s ease-in-out;
         z-index: 100;
     }
 
@@ -981,10 +1035,9 @@ a, button, [role="button"], [onclick] {
         width: 70vw;
         z-index: 300;
         font-weight: bold;
-        margin-inline-start: 7%;
         border-radius: 8px;
+        margin-inline-start: 7%;
     }
-
     .dropdown {
         z-index: 300;
         width: 100vw;
@@ -1005,7 +1058,7 @@ a, button, [role="button"], [onclick] {
         top: 100%;
         left: 10%;
         width: 70%;
-        height: 50vh;
+        height: 50dvh;
         display: none;
         min-width: 200px;
         margin-inline-start: 8%;
@@ -1025,7 +1078,8 @@ a, button, [role="button"], [onclick] {
         top: 17.5vh;
         right: 1.3%;
         width: 100vw;
-        height: 70vh;
+        height: 70dvh;
+        min-height: calc(70dvh);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1039,7 +1093,7 @@ a, button, [role="button"], [onclick] {
         right: 0;
         z-index: 7;
         width: 90vw;
-        min-height: 70vh;
+        min-height: 70dvh;
         height: 100%;
         display: block;
     }
@@ -1050,7 +1104,8 @@ a, button, [role="button"], [onclick] {
         margin-bottom: 4vh;
         z-index: 9;
         width: fit-content;
-        min-height: 40vh;
+        height: 40dvh;
+        min-height: 40dvh;
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -1133,7 +1188,7 @@ a, button, [role="button"], [onclick] {
         order: 2;
         margin-top: 5vh;
         font-size: 1.2rem;
-        margin-inline-start: 4.5vw;
+        margin-inline-start: 2.5vw;
         width: 49vw;
         letter-spacing: 1px;
         text-align: center;
@@ -1245,15 +1300,21 @@ a, button, [role="button"], [onclick] {
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 100;
+        z-index: 1000;
         animation: float 3s ease-in-out infinite;
         transition: all 0.3s ease;
     }
-
+    .whatsapp_section,
+    .whatsapp_service {
+        display: none;
+    }
+    .form {
+        display: none;
+    }
     .whatsapp-float img {
         width: 100%;
         height: 100%;
-        z-index: 2000;
+        z-index: 1000;
         background: #31817e;
         border-radius: 50%;
         padding: 9px;
@@ -1271,7 +1332,7 @@ a, button, [role="button"], [onclick] {
         height: 100%;
         border-radius: 50%;
         background-color: #98d6d1;
-        box-shadow: 0 20px 10px #98d6d1 inset;
+        box-shadow: 0 10px 10px #98d6d1 inset;
         animation: ring 3s infinite ease-out;
         opacity: 0;
         z-index: 1;
@@ -1326,7 +1387,7 @@ a, button, [role="button"], [onclick] {
         right: 5%;
         display: block;
         width: 95vw;
-        height: 80vh;
+        height: 76vh;
         top: 20vh;
     }
 
@@ -1336,7 +1397,7 @@ a, button, [role="button"], [onclick] {
         right: 0;
         display: block;
         width: 93vw;
-        height: 91vh;
+        height: 90vh;
         z-index: 3;
     }
 
@@ -1386,13 +1447,14 @@ a, button, [role="button"], [onclick] {
     }
 
     .contact_section {
-        margin-top: 2vh;
         order: 2;
         align-items: center;
     }
 
     .contact_section h1 {
-        margin-bottom: 2vh;
+        margin-bottom: 5vh;
+        width: 90vw;
+        text-align: start;
     }
 
     .about_info {
@@ -1469,32 +1531,342 @@ a, button, [role="button"], [onclick] {
     .whatsapp {
         display: none;
     }
+    .whatsapp_mobile {
+        position: fixed;
+        display: block;
+        margin-top: 6.8vh;
+        background-image: url("Utills/images/whatsapp.webp");
+        fill: #125956;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        bottom: 2vh;
+        left: 3vw;
+        width: 65px;
+        height: 65px;
+    }
+    .text_section {
+        align-items: start;
+        width: 100vw;
+        min-height: 100vh;
+        height: fit-content;
+        margin-top: 15vh;
+        padding: 0;
+    }
+    .text {
+        text-align: center;
 
+        p {
+            font-size: calc(var(--index) * 1.6);
+
+        }
+        #title_service {
+            margin: 3vh 0;
+            text-align: start;
+        }
+        h1 {
+            margin: 5vh 0;
+            font-size: calc(var(--index) * 2.2);
+            text-align: start;
+            width: 65%;
+        }
+        h3, h2{
+            margin: 2vh 0;
+            letter-spacing: 1px;
+            font-size: calc(var(--index) * 2);
+            text-align: center;
+        }
+    }
+    .first_section {
+        justify-content: center;
+        width: 100vw;
+        padding:0 20px;
+    }
+    .first_section .first_part {
+        width: 100%;
+        justify-content: start;
+        align-items: start;
+
+        p {
+            font-size: calc(var(--index) * 1.6);
+            line-height: 3.5vh;
+            letter-spacing: 1px;
+            text-align: start;
+            width: 90vw;
+        }
+    }
+    .first_part h1 {
+        font-size: calc(var(--index) * 2.5);
+        text-wrap: auto;
+        text-align: left;
+    }
+    .second_part img{
+        top: 10vh;
+        right: 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60vw;
+        z-index: -1;
+    }
+
+    #main_icon_service {
+        top: 13vh;
+        right: 13vw;
+        width: 37vw;
+        height: 37vw;
+    }
+    .steps_section {
+        flex-direction: column;
+        margin: 5vh 0 0 0 ;
+    }
+    .steps {
+        display: flex;
+        width: 100vw;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 5vh 0;
+    }
+    .steps li {
+        width: 80vw;
+        font-size: calc(var(--index) * 1.8);
+    }
+    .step-content {
+        font-size: calc(var(--index) * 1.8);
+    }
+    .steps img {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        width: 20vw;
+    }
+    .second_section {
+        margin: 3vh 1vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-around;
+        width: 100vw;
+        padding: 0  20px  0 20px ;
+    }
+
+    .features_service,
+    .reasons {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        min-height: fit-content;
+        margin-inline-start: 20px;
+    }
+    .features_section,
+    .reasonse_section {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+    }
+    .reasonse_section {
+        margin-top: 5vh;
+    }
+    .reasonse_section h2{
+        text-align: start;
+        margin: 3vh 0;
+    }
+    .features_section h2 {
+        text-align: start;
+    }
+    .features_service li,
+    .reasons li {
+        font-size: calc(var(--index) * 1.6);
+        text-align: start;
+    }
+    .third_section {
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+        width: 100vw;
+        text-align: start;
+    }
+    .return_section {
+        order: 2;
+       align-items: center;
+        justify-content: start;
+        font-size: 1vw;
+        font-weight: normal;
+        margin-top: 1vh;
+        padding: 20px;
+        img {
+            width: 10vw;
+        }
+    }
+    .cta {
+        margin: 0;
+        width: 100vw;
+        align-items: start;
+        justify-content: start;
+        padding: 20px;
+    }
+    .cta h2 {
+        text-align: start;
+    }
+    .whatsapp_section {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        width: fit-content;
+        margin-top: 3vh;
+    }
+    .whatsapp_service {
+        width: 15vw;
+        height: 15vw;
+    }
+    .about_section_married {
+        margin-top: 6vh;
+        display: flex;
+        align-items: start;
+        width: 90vw;
+        text-align: left;
+        flex-direction: column;
+        justify-content: start;
+        min-height: 15vh;
+        font-size: calc(var(--index) * 1.6);
+    }
+    .not-found {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .second_part_logo {
+        margin-inline-start: 1.5vw;
+    }
+}
+@media (min-width: 550px) and (max-width: 940px){
+    .elem_light_mobile {
+        height: 97vh;
+    }
+    .elem_blue_mobile {
+        height: 87vh;
+    }
+    .list_services {
+        margin-top: 2vh;
+    }
+    .list_services a{
+        width: 80%;
+    }
+    .contact_group {
+        width: 80%;
+    }
 }
 
-@media (min-width: 768px) and (orientation: portrait) {
-    .dropdown-btn,
-    .nav a {
-        font-size: calc(var(--index) * 0.8);
-    }
 
-    .content {
-        margin-top: 13vh;
-        margin-inline-start: 4vw;
-    }
+    @media (max-width: 1030px) and (orientation: landscape) {
+        .body {
+            overflow-y: visible;
+        }
 
-    .form button {
-        width: fit-content;
-    }
+        .elem_light_mobile{
+            height: 180vh;
+        }
+        .elem_blue_mobile{
+            height: 140vh;
+            top: 60vh;
+        }
+        .contact_page {
+            margin-top: 100vh;
+        }
+        .tel {
+            margin-top: 9vh;
+            margin-inline-start: 7vw;
+            width: fit-content;
+        }
+        .contact_group {
+            width: 50%;
+            height: fit-content;
+            margin-bottom: 5vh;
+            padding: 5vh;
+        }
+        .contact_group p {
+            line-height: 6vh;
+        }
+        .footer .tel {
+            margin-inline-start: 1vw;
+        }
+        .nav_link {
+            width: 40vw;
+        }
+        .dropdown-btn {
+            width: 40vw;
+        }
+        .nav {
+            padding-top: 25vh;
+            overflow-y: visible;
+            align-items: end;
+            justify-content: end;
+        }
+        .dropdown {
+            width:30vw;
+            margin-inline-end: 9vw;
+            height: fit-content;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            width: 40vw;
+            left: auto;
+            right: -6%;
+        }
+
+        .nav_link {
+            margin-inline-end: 10.5vw;
+        }
+        .first_section {
+           width: 100%;
+            margin-top: 40vh;
+        }
+        .second_part img{
+          width: 40vw;
+        }
+        #main_icon_service {
+            width: 20vw;
+            height: 20vw;
+        }
+        .steps img{
+            width: 10vw;
+        }
+        .steps {
+            width: 60%;
+            line-height: 4vh;
+        }
+        .steps li,
+        .features_service li {
+                line-height: 6vh;
+        }
+        .first_section,
+        .first_part p {
+            line-height: 6vh !important;
+        }
+.elem_nav {
+    height: 100vh;
+    width: 70%;
+}
+ .form_mobile {
+    display: none;
+}
+.dropdown-btn {
+    margin-inline-start: 4vw;
+}
 
     .list_services {
         height: fit-content;
+        margin-top: 17vh;
     }
-
-    .main_page {
-        width: 100%;
-    }
-
     .contact_page {
         padding-top: 5vh;
     }

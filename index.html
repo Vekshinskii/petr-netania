@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>НАТАНИЯ-ПЕТР</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,10 @@
     <script defer src="index.js"></script>
 </head>
 <body id="home">
-<div class="blur-overlay"></div>
-<img class="elem_light_mobile" alt="elem_light_mobile" src="./Utills/images/mobile_home.png"/>
-<!-- <img class="elem_blue" alt="elem_blue" src="./Utills/images/elem_blue.png"/> -->
-<img class="elem_blue_mobile" alt="elem_blue_mobile" src="./Utills/images/mobile_blue_home.png"/>
+
 <header class="header">
-    <a href="#home">
-        <div class="logo">«НАТАНИЯ <span class="second_part">   – ПЕТР»</span></div>
+    <a onclick="navigateTo('/')" href="">
+        <span class="logo" >«НАТАНИЯ <span class="second_part_logo"> – ПЕТР»</span></span>
     </a>
     <div class="burger-menu">
         <div class="bar"></div>
@@ -28,12 +25,12 @@
         <div class="bar"></div>
     </div>
     <nav class="nav">
-        <img class="elem_nav" alt="elem_nav" src="./Utills/images/mobile_nav.png"/>
-        <a href="#about">
-            <div id="about_link" class=" nav_link"> O НАС</div>
+        <img class="elem_nav" alt="elem_nav" src="./Utills/images/mobile_nav.webp"/>
+        <a class="nav_to_section" data-to="about_info" href="">
+            <div class="nav_link"> O НАС</div>
         </a>
-        <a href="#contact">
-            <div id="contact_link" class=" nav_link">КОНТАКТЫ</div>
+        <a class="nav_to_section " data-to="contact" href="">
+            <div class="nav_link">КОНТАКТЫ</div>
         </a>
         <div class="dropdown">
             <div class="dropdown-btn nav_link">УСЛУГИ</div>
@@ -42,38 +39,36 @@
                 <a class="navi_to" data-path="/apostille" href="">Апостиль</a>
                 <a class="navi_to" data-path="/translation" href="">Перевод документов</a>
                 <a class="navi_to" data-path="/forms" href="">Заполнение анкет</a>
-                <a class="navi_to" data-path="" href="">Составление завещания</a>
-                <a class="navi_to" data-path="" href="">Подтверждение отцовства / материнства </a>
-                <a class="navi_to" data-path="" href="">Помощь в подготовке документов</a>
-                <a class="navi_to" data-path="" href="">Оформление гражданства "престарелого родителя"</a>
-                <a class="navi_to" data-path="" href="">Заказ и получение документов из стран бывшего СНГ</a>
+                <a class="navi_to" data-path="/will" href="">Составление завещания</a>
+                <a class="navi_to" data-path="/parentage" href="">Подтверждение отцовства / материнства </a>
+                <a class="navi_to" data-path="/document-preparation" href="">Помощь в подготовке документов</a>
+                <a class="navi_to" data-path="/parent-citizenship" href="">Оформление гражданства "престарелого родителя"</a>
+                <a class="navi_to" data-path="/cis-documents" href="">Заказ и получение документов из стран бывшего СНГ</a>
             </div>
         </div>
         <div class="form_mobile">
-            <img class="elem_blue_form" alt="elem_blue_form" src="./Utills/images/form_mobile.png"/>
+            <img class="elem_blue_form" alt="elem_blue_form" src="./Utills/images/form_mobile.webp"/>
         </div>
     </nav>
     <div class="tel">
-        <img class="phone_icon" alt="phone_icon" src="./Utills/images/icon_phon_header.png"/>
+        <img class="phone_icon" alt="phone_icon" src="./Utills/images/icon_phon_header.webp"/>
         +(972)50-5382121
     </div>
 </header>
-
 <div id="app">
 </div>
-
 <footer class="footer">
-    <a href="#home"><span class="logo">«НАТАНИЯ <span class="second_part"> – ПЕТР»</span></span></a>
+    <a href="" onclick="navigateTo('/')"><span class="logo" >«НАТАНИЯ <span class="second_part_logo"> – ПЕТР»</span></span></a>
     <div class="footer_section">
         <nav class="nav">
-            <a href="#about">О НАС</a>
-            <a href="#contact">КОНТАКТЫ</a>
-            <a href="#home">ГЛАВНАЯ</a>
+            <a class="nav_to_section" data-to="about_info" href="">О НАС</a>
+            <a class="nav_to_section" data-to="contact" href="">КОНТАКТЫ</a>
+            <a onclick="navigateTo('/')" href="">ГЛАВНАЯ</a>
         </nav>
         <a href="https://hexobee-ed04d.web.app/" target="_blank" class="create">Created by Hexobee</a>
     </div>
     <div class="tel">
-        <img class="phone_icon" alt="phone_icon" src="./Utills/images/icon_phon_header.png"/>
+        <img class="phone_icon" alt="phone_icon" src="./Utills/images/icon_phon_header.webp"/>
         +(972)50-5382121
     </div>
 </footer>
